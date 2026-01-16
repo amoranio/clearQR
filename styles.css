@@ -128,11 +128,7 @@ img {
 
 .logo-text .qr {
     font-weight: 700;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23fff' x='0' y='0' width='10' height='10'/%3E%3Crect fill='%23000' x='10' y='0' width='10' height='10'/%3E%3Crect fill='%23fff' x='20' y='0' width='10' height='10'/%3E%3Crect fill='%23000' x='30' y='0' width='10' height='10'/%3E%3Crect fill='%23fff' x='40' y='0' width='10' height='10'/%3E%3Crect fill='%23000' x='50' y='0' width='10' height='10'/%3E%3Crect fill='%23fff' x='60' y='0' width='10' height='10'/%3E%3Crect fill='%23000' x='70' y='0' width='10' height='10'/%3E%3Crect fill='%23fff' x='80' y='0' width='10' height='10'/%3E%3Crect fill='%23000' x='90' y='0' width='10' height='10'/%3E%3Crect fill='%23000' x='0' y='10' width='10' height='10'/%3E%3Crect fill='%23fff' x='10' y='10' width='10' height='10'/%3E%3Crect fill='%23000' x='20' y='10' width='10' height='10'/%3E%3Crect fill='%23fff' x='30' y='10' width='10' height='10'/%3E%3Crect fill='%23000' x='40' y='10' width='10' height='10'/%3E%3Crect fill='%23fff' x='50' y='10' width='10' height='10'/%3E%3Crect fill='%23000' x='60' y='10' width='10' height='10'/%3E%3Crect fill='%23fff' x='70' y='10' width='10' height='10'/%3E%3Crect fill='%23000' x='80' y='10' width='10' height='10'/%3E%3Crect fill='%23fff' x='90' y='10' width='10' height='10'/%3E%3C/svg%3E");
-    background-size: 8px 8px;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
 }
 
 .nav-links {
@@ -326,6 +322,10 @@ img {
 }
 
 .gradient-text {
+    color: var(--text-primary);
+}
+
+.hero-highlight {
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23fff' x='0' y='0' width='12' height='12'/%3E%3Crect fill='%23888' x='12' y='0' width='12' height='12'/%3E%3Crect fill='%23fff' x='24' y='0' width='12' height='12'/%3E%3Crect fill='%23aaa' x='36' y='0' width='12' height='12'/%3E%3Crect fill='%23fff' x='48' y='0' width='12' height='12'/%3E%3Crect fill='%23888' x='60' y='0' width='12' height='12'/%3E%3Crect fill='%23fff' x='72' y='0' width='12' height='12'/%3E%3Crect fill='%23aaa' x='84' y='0' width='12' height='12'/%3E%3Crect fill='%23aaa' x='0' y='12' width='12' height='12'/%3E%3Crect fill='%23fff' x='12' y='12' width='12' height='12'/%3E%3Crect fill='%23888' x='24' y='12' width='12' height='12'/%3E%3Crect fill='%23fff' x='36' y='12' width='12' height='12'/%3E%3Crect fill='%23aaa' x='48' y='12' width='12' height='12'/%3E%3Crect fill='%23fff' x='60' y='12' width='12' height='12'/%3E%3Crect fill='%23888' x='72' y='12' width='12' height='12'/%3E%3Crect fill='%23fff' x='84' y='12' width='12' height='12'/%3E%3C/svg%3E");
     background-size: 6px 6px;
     -webkit-background-clip: text;
@@ -755,12 +755,8 @@ img {
 .step-number {
     font-size: 4rem;
     font-weight: 800;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23fff' x='0' y='0' width='12' height='12'/%3E%3Crect fill='%23666' x='12' y='0' width='12' height='12'/%3E%3Crect fill='%23fff' x='24' y='0' width='12' height='12'/%3E%3Crect fill='%23888' x='36' y='0' width='12' height='12'/%3E%3Crect fill='%23fff' x='48' y='0' width='12' height='12'/%3E%3Crect fill='%23666' x='60' y='0' width='12' height='12'/%3E%3Crect fill='%23fff' x='72' y='0' width='12' height='12'/%3E%3Crect fill='%23888' x='84' y='0' width='12' height='12'/%3E%3Crect fill='%23888' x='0' y='12' width='12' height='12'/%3E%3Crect fill='%23fff' x='12' y='12' width='12' height='12'/%3E%3Crect fill='%23666' x='24' y='12' width='12' height='12'/%3E%3Crect fill='%23fff' x='36' y='12' width='12' height='12'/%3E%3Crect fill='%23888' x='48' y='12' width='12' height='12'/%3E%3Crect fill='%23fff' x='60' y='12' width='12' height='12'/%3E%3Crect fill='%23666' x='72' y='12' width='12' height='12'/%3E%3Crect fill='%23fff' x='84' y='12' width='12' height='12'/%3E%3C/svg%3E");
-    background-size: 8px 8px;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    opacity: 0.4;
+    color: var(--text-primary);
+    opacity: 0.2;
     line-height: 1;
     margin-bottom: 20px;
 }
