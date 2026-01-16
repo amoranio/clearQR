@@ -3,516 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ClearQR - Enterprise QR code security. Protect your organization from quishing attacks with secure, on-device QR scanning.">
-    <meta name="keywords" content="QR security, quishing protection, enterprise security, QR scanner, phishing protection">
-    <title>ClearQR - Secure QR Scanning for Enterprise</title>
+    <meta name="description" content="ClearQR - Secure QR code scanning. Protect against quishing attacks.">
+    <title>ClearQR - Secure QR Scanning</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-icon">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3" y="3" width="7" height="7" stroke="currentColor" stroke-width="1.5"/>
-                        <rect x="5" y="5" width="3" height="3" fill="currentColor"/>
-                        <rect x="14" y="3" width="7" height="7" stroke="currentColor" stroke-width="1.5"/>
-                        <rect x="16" y="5" width="3" height="3" fill="currentColor"/>
-                        <rect x="3" y="14" width="7" height="7" stroke="currentColor" stroke-width="1.5"/>
-                        <rect x="5" y="16" width="3" height="3" fill="currentColor"/>
-                        <rect x="14" y="14" width="3" height="3" fill="currentColor"/>
-                        <rect x="18" y="14" width="3" height="3" fill="currentColor"/>
-                        <rect x="14" y="18" width="3" height="3" fill="currentColor"/>
-                        <rect x="18" y="18" width="3" height="3" fill="currentColor"/>
-                        <rect x="11" y="3" width="2" height="2" fill="currentColor"/>
-                        <rect x="11" y="7" width="2" height="2" fill="currentColor"/>
-                        <rect x="3" y="11" width="2" height="2" fill="currentColor"/>
-                        <rect x="7" y="11" width="2" height="2" fill="currentColor"/>
-                        <rect x="11" y="11" width="2" height="2" fill="currentColor"/>
-                    </svg>
-                </span>
-                <span class="logo-text">clear<span class="qr">QR</span></span>
+    <!-- Menu Toggle Button -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-nav">
+            <a href="#about">About</a>
+            <a href="#downloads">Downloads</a>
+            <a href="#privacy">Privacy</a>
+            <a href="https://amoran.io" target="_blank" rel="noopener">amoran.io</a>
+        </nav>
+    </aside>
+
+    <!-- Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-wrapper">
+            <!-- Logo -->
+            <div class="logo-container">
+                <svg class="logo-svg" viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- "clear" text -->
+                    <text x="0" y="75" class="logo-clear">clear</text>
+                    <!-- "QR" with QR pattern effect -->
+                    <defs>
+                        <pattern id="qrPattern" patternUnits="userSpaceOnUse" width="8" height="8">
+                            <rect width="4" height="4" fill="#fff"/>
+                            <rect x="4" width="4" height="4" fill="#000"/>
+                            <rect y="4" width="4" height="4" fill="#000"/>
+                            <rect x="4" y="4" width="4" height="4" fill="#fff"/>
+                        </pattern>
+                        <mask id="qrMask">
+                            <text x="205" y="75" class="logo-qr-mask">QR</text>
+                        </mask>
+                    </defs>
+                    <rect x="205" y="20" width="195" height="70" fill="url(#qrPattern)" mask="url(#qrMask)"/>
+                </svg>
             </div>
-            <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#how-it-works">How It Works</a>
-                <a href="#security">Security</a>
-                <a href="#download">Download</a>
-            </div>
-            <div class="nav-downloads">
-                <a href="#" class="btn-download btn-apple" title="Download for macOS">
+
+            <!-- Tagline -->
+            <p class="tagline">Secure QR scanning that protects against phishing attacks.</p>
+
+            <!-- Download Buttons -->
+            <div class="download-buttons">
+                <a href="#" class="download-btn">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                     </svg>
                     <span>macOS</span>
                 </a>
-                <a href="#" class="btn-download btn-windows" title="Download for Windows">
+                <a href="#" class="download-btn">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M3 12V6.75l6-1.32v6.48L3 12zm17-9v8.75l-10 .15V5.21L20 3zM3 13l6 .09v6.81l-6-1.15V13zm17 .25V22l-10-1.91V13.1l10 .15z"/>
                     </svg>
                     <span>Windows</span>
                 </a>
             </div>
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg">
-            <div class="grid-pattern"></div>
-            <div class="glow glow-1"></div>
-            <div class="glow glow-2"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <h1>Secure QR Scanning<br><span class="hero-highlight">Without Compromise</span></h1>
-                <p class="hero-subtitle">Protect your organization from quishing attacks. ClearQR keeps QR code interactions on enterprise devices where your security controls can be applied.</p>
-                <div class="hero-cta">
-                    <a href="#download" class="btn btn-primary">
-                        Get Started
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                    <a href="#how-it-works" class="btn btn-secondary">Learn More</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">587%</span>
-                        <span class="stat-label">Increase in quishing attacks (2023)</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat">
-                        <span class="stat-number">90%</span>
-                        <span class="stat-label">Of QR scans bypass enterprise security</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="phone-mockup">
-                    <div class="phone-screen">
-                        <div class="scan-animation">
-                            <div class="qr-code">
-                                <svg viewBox="0 0 100 100">
-                                    <rect x="10" y="10" width="25" height="25" fill="currentColor"/>
-                                    <rect x="65" y="10" width="25" height="25" fill="currentColor"/>
-                                    <rect x="10" y="65" width="25" height="25" fill="currentColor"/>
-                                    <rect x="15" y="15" width="15" height="15" fill="var(--bg-primary)"/>
-                                    <rect x="70" y="15" width="15" height="15" fill="var(--bg-primary)"/>
-                                    <rect x="15" y="70" width="15" height="15" fill="var(--bg-primary)"/>
-                                    <rect x="18" y="18" width="9" height="9" fill="currentColor"/>
-                                    <rect x="73" y="18" width="9" height="9" fill="currentColor"/>
-                                    <rect x="18" y="73" width="9" height="9" fill="currentColor"/>
-                                    <rect x="40" y="10" width="5" height="5" fill="currentColor"/>
-                                    <rect x="50" y="10" width="5" height="5" fill="currentColor"/>
-                                    <rect x="40" y="20" width="5" height="5" fill="currentColor"/>
-                                    <rect x="45" y="25" width="5" height="5" fill="currentColor"/>
-                                    <rect x="40" y="40" width="20" height="20" fill="currentColor"/>
-                                    <rect x="45" y="45" width="10" height="10" fill="var(--bg-primary)"/>
-                                    <rect x="65" y="40" width="5" height="5" fill="currentColor"/>
-                                    <rect x="75" y="45" width="5" height="5" fill="currentColor"/>
-                                    <rect x="85" y="50" width="5" height="5" fill="currentColor"/>
-                                    <rect x="65" y="55" width="10" height="5" fill="currentColor"/>
-                                    <rect x="40" y="65" width="5" height="5" fill="currentColor"/>
-                                    <rect x="50" y="70" width="5" height="5" fill="currentColor"/>
-                                    <rect x="40" y="80" width="5" height="5" fill="currentColor"/>
-                                    <rect x="55" y="85" width="5" height="5" fill="currentColor"/>
-                                    <rect x="65" y="65" width="10" height="10" fill="currentColor"/>
-                                    <rect x="80" y="65" width="10" height="10" fill="currentColor"/>
-                                    <rect x="70" y="80" width="5" height="10" fill="currentColor"/>
-                                    <rect x="85" y="80" width="5" height="10" fill="currentColor"/>
-                                </svg>
-                            </div>
-                            <div class="scan-line"></div>
-                        </div>
-                        <div class="scan-result">
-                            <div class="result-icon secure">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                    <path d="M9 12l2 2 4-4"/>
-                                </svg>
-                            </div>
-                            <span class="result-text">URL Verified Safe</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section class="problem-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">The Problem</span>
-                <h2>QR Codes Create a<br><span class="gradient-text">Security Blind Spot</span></h2>
-            </div>
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                            <line x1="12" y1="9" x2="12" y2="13"/>
-                            <line x1="12" y1="17" x2="12.01" y2="17"/>
-                        </svg>
-                    </div>
-                    <h3>Quishing is Exploding</h3>
-                    <p>QR code phishing attacks have increased dramatically as threat actors exploit the gap between physical and digital security.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-                            <line x1="12" y1="18" x2="12.01" y2="18"/>
-                        </svg>
-                    </div>
-                    <h3>Personal Device Risk</h3>
-                    <p>Employees scan QR codes with personal devices, completely bypassing your enterprise security infrastructure and controls.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
-                        </svg>
-                    </div>
-                    <h3>No Native Protection</h3>
-                    <p>Standard device cameras offer zero protection against malicious URLs hidden behind innocent-looking QR codes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Features</span>
-                <h2>Enterprise-Grade Security<br><span class="gradient-text">Built for Modern Threats</span></h2>
-                <p class="section-desc">ClearQR provides comprehensive protection against QR-based attacks while maintaining productivity.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card featured">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        </svg>
-                    </div>
-                    <h3>Real-Time URL Analysis</h3>
-                    <p>Every scanned URL is instantly analyzed against threat intelligence databases, checking for known malicious domains, phishing patterns, and suspicious redirects.</p>
-                    <ul class="feature-list">
-                        <li>Threat intelligence integration</li>
-                        <li>Domain reputation scoring</li>
-                        <li>Redirect chain analysis</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                        </svg>
-                    </div>
-                    <h3>On-Device Processing</h3>
-                    <p>All scanning happens locally on the enterprise device, ensuring data never leaves your controlled environment.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                            <polyline points="14 2 14 8 20 8"/>
-                            <line x1="16" y1="13" x2="8" y2="13"/>
-                            <line x1="16" y1="17" x2="8" y2="17"/>
-                            <polyline points="10 9 9 9 8 9"/>
-                        </svg>
-                    </div>
-                    <h3>Audit Logging</h3>
-                    <p>Complete visibility into all QR scan activity for compliance reporting and security investigations.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="3"/>
-                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-                        </svg>
-                    </div>
-                    <h3>Policy Controls</h3>
-                    <p>Define custom rules for allowed domains, blocked categories, and automatic actions based on risk levels.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-                        </svg>
-                    </div>
-                    <h3>SIEM Integration</h3>
-                    <p>Stream security events directly to your existing SIEM platform for centralized monitoring and alerting.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <h3>User Education</h3>
-                    <p>Built-in warnings help users understand threats, turning security events into learning opportunities.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="how-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">How It Works</span>
-                <h2>Protection in<br><span class="gradient-text">Three Simple Steps</span></h2>
-            </div>
-            <div class="steps-container">
-                <div class="step">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h3>Scan</h3>
-                        <p>Use ClearQR to scan any QR code. Our app replaces the need for your device's native camera scanner.</p>
-                    </div>
-                    <div class="step-visual">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-                            <circle cx="12" cy="13" r="4"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="step-connector">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </div>
-                <div class="step">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <h3>Analyze</h3>
-                        <p>ClearQR instantly analyzes the decoded URL against multiple threat intelligence sources and your custom policies.</p>
-                    </div>
-                    <div class="step-visual">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="11" cy="11" r="8"/>
-                            <path d="M21 21l-4.35-4.35"/>
-                            <path d="M11 8v6M8 11h6"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="step-connector">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </div>
-                <div class="step">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <h3>Protect</h3>
-                        <p>Safe links open in your secured browser. Threats are blocked and logged, keeping your organization protected.</p>
-                    </div>
-                    <div class="step-visual">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            <path d="M9 12l2 2 4-4"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Security Section -->
-    <section id="security" class="security-section">
-        <div class="container">
-            <div class="security-content">
-                <div class="section-header left-aligned">
-                    <span class="section-tag">Why ClearQR</span>
-                    <h2>Keep Security Controls<br><span class="gradient-text">Where They Belong</span></h2>
-                    <p class="section-desc">Traditional QR scanning forces users off managed devices, creating dangerous gaps in your security posture. ClearQR changes that.</p>
-                </div>
-                <div class="security-features">
-                    <div class="security-feature">
-                        <div class="sf-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                                <line x1="3" y1="9" x2="21" y2="9"/>
-                                <line x1="9" y1="21" x2="9" y2="9"/>
-                            </svg>
-                        </div>
-                        <div class="sf-content">
-                            <h4>Enterprise Browser Integration</h4>
-                            <p>Scanned URLs open in your managed browser where DLP, proxy, and content filtering policies are enforced.</p>
-                        </div>
-                    </div>
-                    <div class="security-feature">
-                        <div class="sf-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <ellipse cx="12" cy="5" rx="9" ry="3"/>
-                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
-                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
-                            </svg>
-                        </div>
-                        <div class="sf-content">
-                            <h4>Zero Data Exfiltration</h4>
-                            <p>All processing happens on-device. No scanned data is sent to external servers without your explicit policy approval.</p>
-                        </div>
-                    </div>
-                    <div class="security-feature">
-                        <div class="sf-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                                <line x1="12" y1="22.08" x2="12" y2="12"/>
-                            </svg>
-                        </div>
-                        <div class="sf-content">
-                            <h4>MDM Compatible</h4>
-                            <p>Deploys seamlessly through your existing MDM solution with centralized configuration management.</p>
-                        </div>
-                    </div>
-                    <div class="security-feature">
-                        <div class="sf-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <path d="M9 15l2 2 4-4"/>
-                            </svg>
-                        </div>
-                        <div class="sf-content">
-                            <h4>Compliance Ready</h4>
-                            <p>Detailed audit trails support SOC 2, HIPAA, and other compliance requirements with exportable reports.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="security-visual">
-                <div class="shield-container">
-                    <div class="shield-glow"></div>
-                    <svg class="shield-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        <path d="M9 12l2 2 4-4"/>
-                    </svg>
-                    <div class="orbit orbit-1">
-                        <div class="orbit-dot"></div>
-                    </div>
-                    <div class="orbit orbit-2">
-                        <div class="orbit-dot"></div>
-                    </div>
-                    <div class="orbit orbit-3">
-                        <div class="orbit-dot"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Download Section -->
-    <section id="download" class="download-section">
-        <div class="container">
-            <div class="download-card">
-                <div class="download-content">
-                    <h2>Ready to Secure Your<br><span class="gradient-text">QR Code Interactions?</span></h2>
-                    <p>Download ClearQR today and close the gap in your enterprise security.</p>
-                    <div class="download-buttons">
-                        <a href="#" class="download-btn apple">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                            </svg>
-                            <div class="btn-text">
-                                <span class="small">Download for</span>
-                                <span class="large">macOS</span>
-                            </div>
-                        </a>
-                        <a href="#" class="download-btn windows">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M3 12V6.75l6-1.32v6.48L3 12zm17-9v8.75l-10 .15V5.21L20 3zM3 13l6 .09v6.81l-6-1.15V13zm17 .25V22l-10-1.91V13.1l10 .15z"/>
-                            </svg>
-                            <div class="btn-text">
-                                <span class="small">Download for</span>
-                                <span class="large">Windows</span>
-                            </div>
-                        </a>
-                    </div>
-                    <p class="download-note">Available for macOS 11+ and Windows 10+</p>
-                </div>
-                <div class="download-bg">
-                    <div class="download-glow"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="nav-logo">
-                        <span class="logo-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="3" y="3" width="7" height="7" stroke="currentColor" stroke-width="1.5"/>
-                                <rect x="5" y="5" width="3" height="3" fill="currentColor"/>
-                                <rect x="14" y="3" width="7" height="7" stroke="currentColor" stroke-width="1.5"/>
-                                <rect x="16" y="5" width="3" height="3" fill="currentColor"/>
-                                <rect x="3" y="14" width="7" height="7" stroke="currentColor" stroke-width="1.5"/>
-                                <rect x="5" y="16" width="3" height="3" fill="currentColor"/>
-                                <rect x="14" y="14" width="3" height="3" fill="currentColor"/>
-                                <rect x="18" y="14" width="3" height="3" fill="currentColor"/>
-                                <rect x="14" y="18" width="3" height="3" fill="currentColor"/>
-                                <rect x="18" y="18" width="3" height="3" fill="currentColor"/>
-                                <rect x="11" y="3" width="2" height="2" fill="currentColor"/>
-                                <rect x="11" y="7" width="2" height="2" fill="currentColor"/>
-                                <rect x="3" y="11" width="2" height="2" fill="currentColor"/>
-                                <rect x="7" y="11" width="2" height="2" fill="currentColor"/>
-                                <rect x="11" y="11" width="2" height="2" fill="currentColor"/>
-                            </svg>
-                        </span>
-                        <span class="logo-text">clear<span class="qr">QR</span></span>
-                    </div>
-                    <p>Enterprise QR code security that keeps your organization protected from quishing attacks.</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-col">
-                        <h4>Product</h4>
-                        <a href="#features">Features</a>
-                        <a href="#how-it-works">How It Works</a>
-                        <a href="#security">Security</a>
-                        <a href="#download">Download</a>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Resources</h4>
-                        <a href="#">Documentation</a>
-                        <a href="#">API Reference</a>
-                        <a href="#">Release Notes</a>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Company</h4>
-                        <a href="#">About</a>
-                        <a href="#">Contact</a>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 ClearQR. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>
